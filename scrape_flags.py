@@ -20,14 +20,11 @@ class WikiFlagScraper:
         self.doc = HTML(page.content)
         self.url_dict = self.make_mapping()
 
-    def make_mapping(self) -> Iterator[dict]:
-        return dict(map(
-            lambda x: (
-                x.attrib['alt'],
-                f"https:{x.attrib['src']}"
-            ),
-            self.doc.xpath('.//span[@class="flagicon"]/a/img')
-        ))
+    def make_mapping(self) -> dict:
+        return {
+            x.attrib['alt']: f"https:{x.attrib['src']}"
+            for x in self.doc.xpath('.//span[@class="flagicon"]/a/img')
+        }
 
     def get_image(self, country: str, high_res=False) -> PngImageFile:
         """
