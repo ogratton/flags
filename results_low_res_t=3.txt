@@ -1,193 +1,193 @@
-Afghanistan: {'green', 'red', 'black'}
+Afghanistan: {'black', 'red', 'green'}
 Albania: {'red', 'black'}
-Algeria: {'white', 'black'}
+Algeria: {'black', 'white'}
 Andorra: {'blue', 'yellow', 'red'}
 Angola: {'red', 'black'}
-Antigua and Barbuda: {'blue', 'white', 'red', 'black'}
-Argentina: {'white', 'pink'}
-Armenia: {'orange', 'blue', 'red'}
+Antigua and Barbuda: {'blue', 'red', 'black', 'white'}
+Argentina: {'pink', 'white'}
+Armenia: {'orange', 'red', 'blue'}
 Australia: {'pink', 'blue'}
-Austria: {'white', 'red'}
-Azerbaijan: {'blue', 'red', 'green'}
-The Bahamas: {'orange', 'blue', 'black'}
-Bahrain: {'white', 'red'}
-Bangladesh: {'green', 'red'}
+Austria: {'red', 'white'}
+Azerbaijan: {'red', 'green', 'blue'}
+The Bahamas: {'orange', 'black', 'blue'}
+Bahrain: {'red', 'white'}
+Bangladesh: {'red', 'green'}
 Barbados: {'orange', 'pink', 'blue'}
-Belarus: {'green', 'red'}
-Belgium: {'black', 'yellow', 'red', 'pink'}
-Belize: {'blue', 'red'}
+Belarus: {'red', 'green'}
+Belgium: {'yellow', 'red', 'pink', 'black'}
+Belize: {'red', 'blue'}
 Benin: {'orange', 'red', 'green'}
 Bhutan: {'orange', 'yellow'}
-Bolivia: {'green', 'yellow', 'red'}
+Bolivia: {'yellow', 'green', 'red'}
 Bosnia and Herzegovina: {'orange', 'blue'}
-Botswana: {'white', 'pink', 'black'}
-Brazil: {'green', 'yellow'}
-Brunei: {'white', 'yellow', 'black'}
-Bulgaria: {'green', 'white', 'red'}
-Burkina Faso: {'green', 'red'}
-Burundi: {'green', 'white', 'red'}
-Cape Verde: {'blue', 'white', 'pink', 'red'}
-Cambodia: {'blue', 'red'}
+Botswana: {'pink', 'black', 'white'}
+Brazil: {'yellow', 'green'}
+Brunei: {'yellow', 'black', 'white'}
+Bulgaria: {'red', 'green', 'white'}
+Burkina Faso: {'red', 'green'}
+Burundi: {'red', 'green', 'white'}
+Cape Verde: {'blue', 'red', 'pink', 'white'}
+Cambodia: {'red', 'blue'}
 Cameroon: {'orange', 'red', 'black', 'green'}
-Canada: {'white', 'pink', 'red'}
-Central African Republic: {'blue', 'green', 'orange', 'pink', 'red', 'white'}
-Chad: {'orange', 'blue', 'red', 'black'}
-Chile: {'blue', 'white', 'pink', 'red'}
+Canada: {'red', 'pink', 'white'}
+Central African Republic: {'red', 'white', 'orange', 'pink', 'green', 'blue'}
+Chad: {'orange', 'red', 'black', 'blue'}
+Chile: {'blue', 'red', 'pink', 'white'}
 China: {'red'}
-Colombia: {'orange', 'blue', 'red'}
-Comoros: {'blue', 'orange', 'green', 'pink', 'red', 'white'}
-Republic of the Congo: {'green', 'yellow', 'red'}
-Costa Rica: {'blue', 'white', 'pink', 'red'}
-Ivory Coast: {'orange', 'white', 'green'}
-Croatia: {'white', 'blue', 'red'}
-Cuba: {'blue', 'white', 'pink', 'red'}
+Colombia: {'orange', 'red', 'blue'}
+Comoros: {'red', 'white', 'orange', 'pink', 'green', 'blue'}
+Republic of the Congo: {'yellow', 'green', 'red'}
+Costa Rica: {'blue', 'red', 'pink', 'white'}
+Ivory Coast: {'orange', 'green', 'white'}
+Croatia: {'red', 'white', 'blue'}
+Cuba: {'blue', 'red', 'pink', 'white'}
 Cyprus: {'orange', 'white'}
-Czech Republic: {'white', 'pink', 'blue', 'red'}
-North Korea: {'pink', 'blue', 'red'}
-Democratic Republic of the Congo: {'blue', 'red'}
-Denmark: {'white', 'pink', 'red'}
+Czech Republic: {'blue', 'red', 'pink', 'white'}
+North Korea: {'red', 'pink', 'blue'}
+Democratic Republic of the Congo: {'red', 'blue'}
+Denmark: {'red', 'pink', 'white'}
 Djibouti: {'green', 'white'}
 Dominica: {'orange', 'pink', 'green'}
-Dominican Republic: {'blue', 'white', 'red', 'black'}
-Ecuador: {'orange', 'yellow', 'red', 'blue'}
-Egypt: {'white', 'red', 'black'}
-El Salvador: {'white', 'pink', 'blue'}
-Equatorial Guinea: {'green', 'white', 'blue', 'red'}
-Eritrea: {'green', 'blue', 'red'}
-Estonia: {'white', 'blue', 'black'}
-Eswatini: {'orange', 'pink', 'red', 'blue'}
-Ethiopia: {'green', 'yellow', 'red'}
-Fiji: {'white', 'pink'}
-Finland: {'white', 'pink', 'blue'}
-France: {'blue', 'white', 'pink', 'red'}
-Gabon: {'orange', 'blue', 'green'}
-The Gambia: {'green', 'white', 'blue', 'red'}
-Georgia (country): {'white', 'red'}
+Dominican Republic: {'blue', 'red', 'black', 'white'}
+Ecuador: {'blue', 'orange', 'yellow', 'red'}
+Egypt: {'red', 'black', 'white'}
+El Salvador: {'blue', 'pink', 'white'}
+Equatorial Guinea: {'blue', 'red', 'green', 'white'}
+Eritrea: {'red', 'green', 'blue'}
+Estonia: {'blue', 'black', 'white'}
+Eswatini: {'orange', 'red', 'pink', 'blue'}
+Ethiopia: {'yellow', 'green', 'red'}
+Fiji: {'pink', 'white'}
+Finland: {'blue', 'pink', 'white'}
+France: {'blue', 'red', 'pink', 'white'}
+Gabon: {'orange', 'green', 'blue'}
+The Gambia: {'blue', 'red', 'green', 'white'}
+Georgia (country): {'red', 'white'}
 Germany: {'orange', 'red', 'black'}
 Ghana: {'orange', 'red', 'green'}
-Greece: {'white', 'pink', 'blue'}
+Greece: {'blue', 'pink', 'white'}
 Grenada: {'orange', 'red', 'green'}
-Guatemala: {'white', 'blue'}
+Guatemala: {'blue', 'white'}
 Guinea: {'orange', 'red', 'green'}
 Guinea-Bissau: {'orange', 'red', 'green'}
 Guyana: {'orange', 'red', 'green'}
-Haiti: {'blue', 'red'}
-Honduras: {'white', 'blue'}
-Hungary: {'green', 'white', 'red'}
-Iceland: {'pink', 'blue', 'red'}
-India: {'orange', 'white', 'green'}
-Indonesia: {'white', 'pink', 'red'}
-Iran: {'green', 'white', 'red'}
-Iraq: {'white', 'red', 'black'}
-Republic of Ireland: {'green', 'white', 'pink', 'orange'}
-Israel: {'white', 'pink', 'blue'}
-Italy: {'green', 'white', 'pink', 'red'}
-Jamaica: {'orange', 'black', 'green'}
-Japan: {'white', 'red'}
-Jordan: {'green', 'white', 'red', 'black'}
+Haiti: {'red', 'blue'}
+Honduras: {'blue', 'white'}
+Hungary: {'red', 'green', 'white'}
+Iceland: {'red', 'pink', 'blue'}
+India: {'orange', 'green', 'white'}
+Indonesia: {'red', 'pink', 'white'}
+Iran: {'red', 'green', 'white'}
+Iraq: {'red', 'black', 'white'}
+Republic of Ireland: {'orange', 'pink', 'green', 'white'}
+Israel: {'blue', 'pink', 'white'}
+Italy: {'red', 'pink', 'green', 'white'}
+Jamaica: {'black', 'orange', 'green'}
+Japan: {'red', 'white'}
+Jordan: {'black', 'red', 'green', 'white'}
 Kazakhstan: {'blue'}
-Kenya: {'green', 'pink', 'red', 'black'}
-Kiribati: {'blue', 'red'}
-Kuwait: {'green', 'white', 'red', 'black'}
+Kenya: {'black', 'red', 'pink', 'green'}
+Kiribati: {'red', 'blue'}
+Kuwait: {'green', 'red', 'black', 'white'}
 Kyrgyzstan: {'red'}
-Laos: {'blue', 'white', 'red'}
-Latvia: {'white', 'pink', 'red'}
-Lebanon: {'white', 'pink', 'red'}
-Lesotho: {'green', 'white', 'pink', 'blue'}
-Liberia: {'blue', 'white', 'pink', 'red'}
-Libya: {'green', 'red', 'black'}
-Liechtenstein: {'blue', 'red'}
+Laos: {'blue', 'red', 'white'}
+Latvia: {'red', 'pink', 'white'}
+Lebanon: {'red', 'pink', 'white'}
+Lesotho: {'blue', 'pink', 'green', 'white'}
+Liberia: {'blue', 'red', 'pink', 'white'}
+Libya: {'black', 'red', 'green'}
+Liechtenstein: {'red', 'blue'}
 Lithuania: {'orange', 'red', 'green'}
-Luxembourg: {'blue', 'white', 'pink', 'red'}
-Madagascar: {'orange', 'white', 'red', 'green'}
-Malawi: {'green', 'red', 'black'}
-Malaysia: {'blue', 'white', 'pink', 'red'}
-Maldives: {'green', 'red'}
+Luxembourg: {'blue', 'red', 'pink', 'white'}
+Madagascar: {'orange', 'red', 'green', 'white'}
+Malawi: {'black', 'red', 'green'}
+Malaysia: {'blue', 'red', 'pink', 'white'}
+Maldives: {'red', 'green'}
 Mali: {'orange', 'red', 'green'}
-Malta: {'white', 'pink', 'red'}
+Malta: {'red', 'pink', 'white'}
 Marshall Islands: {'blue'}
 Mauritania: {'red', 'black'}
-Mauritius: {'yellow', 'blue', 'green', 'orange', 'red'}
-Mexico: {'green', 'white', 'pink', 'red'}
+Mauritius: {'red', 'yellow', 'orange', 'green', 'blue'}
+Mexico: {'red', 'pink', 'green', 'white'}
 Federated States of Micronesia: {'white'}
-Monaco: {'white', 'pink', 'red'}
-Mongolia: {'blue', 'red'}
+Monaco: {'red', 'pink', 'white'}
+Mongolia: {'red', 'blue'}
 Montenegro: {'red'}
 Morocco: {'red'}
-Mozambique: {'yellow', 'green', 'pink', 'red', 'black'}
-Myanmar: {'orange', 'white', 'red', 'green'}
-Namibia: {'green', 'blue', 'red'}
+Mozambique: {'red', 'yellow', 'black', 'pink', 'green'}
+Myanmar: {'orange', 'red', 'green', 'white'}
+Namibia: {'red', 'green', 'blue'}
 Nauru: {'pink', 'blue'}
-Nepal: {'blue', 'white', 'red', 'black'}
-Kingdom of the Netherlands: {'blue', 'white', 'red'}
+Nepal: {'blue', 'red', 'black', 'white'}
+Kingdom of the Netherlands: {'blue', 'red', 'white'}
 New Zealand: {'pink', 'blue'}
-Nicaragua: {'white', 'blue'}
-Niger: {'green', 'white', 'red'}
+Nicaragua: {'blue', 'white'}
+Niger: {'red', 'green', 'white'}
 Nigeria: {'green', 'white'}
 North Macedonia: {'yellow', 'red'}
-Norway: {'blue', 'pink', 'red'}
-Oman: {'green', 'white', 'red'}
-Pakistan: {'white', 'black'}
+Norway: {'red', 'pink', 'blue'}
+Oman: {'red', 'green', 'white'}
+Pakistan: {'black', 'white'}
 Palau: {'yellow', 'blue'}
-Panama: {'blue', 'white', 'pink', 'red'}
+Panama: {'blue', 'red', 'pink', 'white'}
 Papua New Guinea: {'red', 'black'}
-Paraguay: {'blue', 'white', 'pink', 'red'}
-Peru: {'white', 'pink', 'red'}
-Philippines: {'blue', 'white', 'red'}
-Poland: {'white', 'red'}
-Portugal: {'green', 'red'}
-Qatar: {'white', 'pink', 'red'}
-South Korea: {'white', 'blue', 'red'}
-Moldova: {'blue', 'yellow', 'red', 'pink'}
-Romania: {'orange', 'pink', 'red', 'blue'}
-Russia: {'blue', 'white', 'red'}
-Rwanda: {'green', 'yellow', 'blue', 'black'}
-Saint Kitts and Nevis: {'green', 'red', 'black'}
+Paraguay: {'blue', 'red', 'pink', 'white'}
+Peru: {'red', 'pink', 'white'}
+Philippines: {'blue', 'red', 'white'}
+Poland: {'red', 'white'}
+Portugal: {'red', 'green'}
+Qatar: {'red', 'pink', 'white'}
+South Korea: {'blue', 'red', 'white'}
+Moldova: {'yellow', 'red', 'pink', 'blue'}
+Romania: {'orange', 'red', 'pink', 'blue'}
+Russia: {'blue', 'red', 'white'}
+Rwanda: {'black', 'yellow', 'green', 'blue'}
+Saint Kitts and Nevis: {'red', 'black', 'green'}
 Saint Lucia: {'white'}
-Saint Vincent and the Grenadines: {'orange', 'blue', 'green'}
-Samoa: {'blue', 'red'}
+Saint Vincent and the Grenadines: {'orange', 'green', 'blue'}
+Samoa: {'red', 'blue'}
 San Marino: {'white'}
-São Tomé and Príncipe: {'green', 'red', 'orange'}
+São Tomé and Príncipe: {'orange', 'red', 'green'}
 Saudi Arabia: {'green'}
-Senegal: {'orange', 'yellow', 'red', 'green'}
-Serbia: {'blue', 'white', 'red'}
-Seychelles: {'yellow', 'blue', 'green', 'red', 'white'}
-Sierra Leone: {'green', 'white', 'blue'}
-Singapore: {'white', 'pink', 'red'}
-Slovakia: {'blue', 'white', 'red'}
-Slovenia: {'blue', 'white', 'red'}
-Solomon Islands: {'blue', 'black'}
+Senegal: {'orange', 'yellow', 'green', 'red'}
+Serbia: {'blue', 'red', 'white'}
+Seychelles: {'red', 'yellow', 'white', 'green', 'blue'}
+Sierra Leone: {'blue', 'green', 'white'}
+Singapore: {'red', 'pink', 'white'}
+Slovakia: {'blue', 'red', 'white'}
+Slovenia: {'blue', 'red', 'white'}
+Solomon Islands: {'black', 'blue'}
 Somalia: {'blue'}
-South Africa: {'blue', 'green', 'red', 'white', 'black'}
-South Sudan: {'blue', 'green', 'pink', 'red', 'black'}
+South Africa: {'red', 'black', 'white', 'green', 'blue'}
+South Sudan: {'red', 'black', 'pink', 'green', 'blue'}
 Spain: {'orange', 'red'}
 Sri Lanka: {'orange', 'red', 'black'}
-Sudan: {'green', 'white', 'red', 'black'}
-Suriname: {'green', 'white', 'pink', 'red'}
-Sweden: {'orange', 'blue', 'green'}
-Switzerland: {'white', 'pink', 'red'}
-Syria: {'white', 'red', 'black'}
-Tajikistan: {'green', 'white', 'pink', 'red'}
-Thailand: {'white', 'pink', 'red', 'black'}
+Sudan: {'green', 'red', 'black', 'white'}
+Suriname: {'red', 'pink', 'green', 'white'}
+Sweden: {'orange', 'green', 'blue'}
+Switzerland: {'red', 'pink', 'white'}
+Syria: {'red', 'black', 'white'}
+Tajikistan: {'red', 'pink', 'green', 'white'}
+Thailand: {'red', 'pink', 'black', 'white'}
 East Timor: {'red', 'black'}
 Togo: {'orange', 'red', 'green'}
-Tonga: {'white', 'red'}
+Tonga: {'red', 'white'}
 Trinidad and Tobago: {'red', 'black'}
 Tunisia: {'red'}
 Turkey: {'red'}
 Turkmenistan: {'green'}
 Tuvalu: {'pink', 'blue'}
-Uganda: {'orange', 'yellow', 'red', 'black'}
+Uganda: {'yellow', 'orange', 'red', 'black'}
 Ukraine: {'orange', 'yellow', 'blue'}
-United Arab Emirates: {'green', 'white', 'red', 'black'}
-United Kingdom: {'blue', 'white', 'pink', 'red'}
-Tanzania: {'green', 'blue', 'black'}
-United States: {'white', 'pink', 'red'}
-Uruguay: {'white', 'pink', 'blue'}
-Uzbekistan: {'green', 'white', 'blue'}
-Vanuatu: {'green', 'red', 'black'}
-Venezuela: {'orange', 'blue', 'red'}
+United Arab Emirates: {'black', 'red', 'green', 'white'}
+United Kingdom: {'blue', 'red', 'pink', 'white'}
+Tanzania: {'black', 'green', 'blue'}
+United States: {'red', 'pink', 'white'}
+Uruguay: {'blue', 'pink', 'white'}
+Uzbekistan: {'blue', 'green', 'white'}
+Vanuatu: {'black', 'red', 'green'}
+Venezuela: {'orange', 'red', 'blue'}
 Vietnam: {'red'}
-Yemen: {'white', 'red', 'black'}
-Zambia: {'orange', 'red', 'black', 'green'}
-Zimbabwe: {'yellow', 'green', 'orange', 'red', 'white', 'black'}
+Yemen: {'red', 'black', 'white'}
+Zambia: {'black', 'orange', 'red', 'green'}
+Zimbabwe: {'red', 'yellow', 'black', 'white', 'orange', 'green'}
