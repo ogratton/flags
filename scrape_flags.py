@@ -4,7 +4,23 @@ import requests
 
 # types
 from PIL.PngImagePlugin import PngImageFile
-from typing import Iterator
+
+
+def cached_to_file(f):
+    """
+    Write the flags to disk so we don't have to download every time
+    This is overfitted for purpose, could be made more general
+    """
+    def wrapper(cls, url):
+        filepath = f"flag_cache/{url.split('/')[-1]}"
+        try:
+            return Image.open(filepath)
+        except IOError:
+            image = f(cls, url)
+            # save image to disk for later
+            image.save(filepath)
+            return image
+    return wrapper
 
 
 class WikiFlagScraper:
@@ -39,6 +55,7 @@ class WikiFlagScraper:
         return self.get_image_from_url(url)
 
     @classmethod
+    @cached_to_file
     def get_image_from_url(cls, url) -> PngImageFile:
         """
         Actually get the image

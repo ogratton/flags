@@ -112,7 +112,7 @@ if __name__ == "__main__":
     canada_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1024px-Flag_of_Canada_%28Pantone%29.svg.png"
 
     flags = Flags(high_res=False, threshold=10)
-    # print(flags.get_colours("Ukraine"))
-    flags.get_all()
+    print(flags.get_colours("Ukraine"))
 
-    print(*[f"{k}: {v}" for k, v in flags.country_colours.items()], sep='\n')
+    # flags.get_all()
+    # print(*[f"{k}: {v}" for k, v in flags.country_colours.items()], sep='\n')
