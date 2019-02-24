@@ -4,6 +4,8 @@ from operator import mul
 from functools import reduce
 import os
 
+# for typing only
+from PIL.PngImagePlugin import PngImageFile
 
 TEST = os.environ.get("TEST")
 
@@ -48,11 +50,12 @@ class Flags:
         else:
             # we get the high-res images to minimise artefacts that mess with colours
             image = self.wiki_flags.get_image(country, high_res=self.high_res)
+        return self.get_colours_from_image(image, country)
 
+    def get_colours_from_image(self, image: PngImageFile, country: str) -> Set[str]:
         # we set the colour profile to RGBA because PIL moans about transparency with RGB
         image = image.convert("RGBA")
         num_pixels = reduce(mul, image.size)
-        print(num_pixels)
         img_colours = image.getcolors()
         if not img_colours:
             raise ValueError(f"Could not get image colours for {country}")
@@ -112,7 +115,12 @@ if __name__ == "__main__":
     canada_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1024px-Flag_of_Canada_%28Pantone%29.svg.png"
 
     flags = Flags(high_res=False, threshold=10)
-    print(flags.get_colours("Ukraine"))
+    # print(flags.get_colours("United Kingdom"))
+
+    from PIL import Image
+
+    img = Image.open("flag_cache/23px-Flag_of_the_United_Kingdom.svg.png")
+    print(flags.get_colours_from_image(img, "UK"))
 
     # flags.get_all()
     # print(*[f"{k}: {v}" for k, v in flags.country_colours.items()], sep='\n')

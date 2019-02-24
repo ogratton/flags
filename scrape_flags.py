@@ -2,7 +2,7 @@ from lxml.etree import HTML
 from PIL import Image
 import requests
 
-# types
+# for typing only
 from PIL.PngImagePlugin import PngImageFile
 
 
