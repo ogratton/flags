@@ -33,13 +33,14 @@ class Flags:
         self.wiki_flags = WikiFlagScraper()
         if not TEST:
             self.wiki_flags.get_pages()
-            print(*self.wiki_flags.url_dict.keys(), sep='\n')
+            # print(*self.wiki_flags.url_dict.keys(), sep='\n')
         self.high_res = high_res
         self.threshold = threshold
+        self.country_colours = dict()
 
     def get_all(self):
         for country in self.wiki_flags.url_dict:
-            self.get_colours(country)
+            self.country_colours[country] = self.get_colours(country)
 
     def get_colours(self, country, test_url=None) -> Set[str]:
         if TEST and test_url:
@@ -110,5 +111,8 @@ if __name__ == "__main__":
 
     canada_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1024px-Flag_of_Canada_%28Pantone%29.svg.png"
 
-    flags = Flags(high_res=True, threshold=10)
-    print(flags.get_colours("Ukraine"))
+    flags = Flags(high_res=False, threshold=10)
+    # print(flags.get_colours("Ukraine"))
+    flags.get_all()
+
+    print(*[f"{k}: {v}" for k, v in flags.country_colours.items()], sep='\n')
