@@ -45,7 +45,7 @@ class Flags:
         # we set the colour profile to RGBA because PIL moans about transparency with RGB
         image = image.convert("RGBA")
         num_pixels = reduce(mul, image.size)
-        img_colours = image.getcolors()
+        img_colours = image.getcolors(num_pixels)
         if not img_colours:
             print(f"Could not get image colours for {country}")
             return set()
