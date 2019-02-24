@@ -21,9 +21,10 @@ class FreqColour(NamedTuple):
 class Flags:
 
     COLOURS = {
-        "red": Colour((255, 0, 0)),
-        "green": Colour((0, 255, 0)),
-        "blue": Colour((0, 0, 255)),
+        # Probably best not to pick "true" red, as dark red will be reported as black
+        "red": Colour((200, 0, 0)),
+        "green": Colour((0, 200, 0)),
+        "blue": Colour((0, 0, 200)),
         "black": Colour((0, 0, 0)),
         "white": Colour((255, 255, 255)),
         "yellow": Colour((255, 255, 0)),
@@ -58,7 +59,9 @@ class Flags:
         num_pixels = reduce(mul, image.size)
         img_colours = image.getcolors()
         if not img_colours:
-            raise ValueError(f"Could not get image colours for {country}")
+            print(f"Could not get image colours for {country}")
+            return set()
+        # print(sorted(img_colours, key=lambda x: x[0], reverse=True))
         freq_colours = [FreqColour(f, Colour(c[:3])) for f, c in img_colours]
         colours = self._reduce_colours(freq_colours, num_pixels)
         return colours
@@ -114,13 +117,25 @@ if __name__ == "__main__":
 
     canada_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1024px-Flag_of_Canada_%28Pantone%29.svg.png"
 
-    flags = Flags(high_res=False, threshold=10)
-    # print(flags.get_colours("United Kingdom"))
+    def test_one():
+        flags = Flags(high_res=False, threshold=3)
+        print(flags.get_colours("Somalia"))
 
-    from PIL import Image
+    def test_from_file():
+        flags = Flags(high_res=False, threshold=3)
+        from PIL import Image
+        img = Image.open("flag_cache/23px-Flag_of_the_United_Kingdom.svg.png")
+        print(flags.get_colours_from_image(img, "UK"))
 
-    img = Image.open("flag_cache/23px-Flag_of_the_United_Kingdom.svg.png")
-    print(flags.get_colours_from_image(img, "UK"))
+    def test_all():
+        hi_res = True
+        thresh = 3
+        results_fname = f"results_{'high' if hi_res else 'low'}_res_t={thresh}.txt"
+        with open(results_fname, 'w+') as res_file:
+            flags = Flags(high_res=hi_res, threshold=thresh)
+            flags.get_all()
+            print(*[f"{k}: {v}" for k, v in flags.country_colours.items()], sep='\n', file=res_file)
 
-    # flags.get_all()
-    # print(*[f"{k}: {v}" for k, v in flags.country_colours.items()], sep='\n')
+    test_all()
+
+    # TODO can't read colours of high res files for some reason

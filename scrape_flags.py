@@ -49,6 +49,7 @@ class WikiFlagScraper:
         # TODO On KeyError, try and fetch from wiki
         url = self.url_dict[country]
         if high_res:
+            # TODO they aren't all 23px
             url = url.replace('23px', '1024px')
 
         print(f"> Getting Flag of {country}: {url}")

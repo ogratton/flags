@@ -1,0 +1,193 @@
+Afghanistan: set()
+Albania: {'black', 'red'}
+Algeria: set()
+Andorra: {'yellow', 'red', 'blue'}
+Angola: set()
+Antigua and Barbuda: set()
+Argentina: set()
+Armenia: {'orange', 'red', 'blue'}
+Australia: set()
+Austria: {'white', 'red'}
+Azerbaijan: {'red', 'green', 'blue'}
+The Bahamas: {'blue', 'black', 'orange'}
+Bahrain: {'white', 'red'}
+Bangladesh: {'red', 'green'}
+Barbados: set()
+Belarus: {'white', 'red', 'green'}
+Belgium: {'yellow', 'red', 'black'}
+Belize: set()
+Benin: {'red', 'green', 'orange'}
+Bhutan: set()
+Bolivia: {'yellow', 'red', 'green'}
+Bosnia and Herzegovina: {'white', 'blue', 'orange'}
+Botswana: {'white', 'black', 'pink'}
+Brazil: {'yellow', 'green'}
+Brunei: set()
+Bulgaria: {'white', 'red', 'green'}
+Burkina Faso: set()
+Burundi: set()
+Cape Verde: set()
+Cambodia: set()
+Cameroon: {'red', 'green', 'orange'}
+Canada: {'white', 'red'}
+Central African Republic: {'blue', 'orange', 'white', 'red', 'green'}
+Chad: {'blue', 'red', 'orange'}
+Chile: {'white', 'red', 'blue'}
+China: {'red'}
+Colombia: {'blue', 'red', 'orange'}
+Comoros: set()
+Republic of the Congo: {'yellow', 'red', 'green'}
+Costa Rica: set()
+Ivory Coast: {'white', 'green', 'orange'}
+Croatia: set()
+Cuba: set()
+Cyprus: set()
+Czech Republic: {'white', 'red', 'blue'}
+North Korea: set()
+Democratic Republic of the Congo: {'red', 'blue'}
+Denmark: {'white', 'red', 'pink'}
+Djibouti: set()
+Dominica: set()
+Dominican Republic: set()
+Ecuador: set()
+Egypt: set()
+El Salvador: set()
+Equatorial Guinea: set()
+Eritrea: {'blue', 'red', 'green', 'orange'}
+Estonia: {'white', 'black', 'blue'}
+Eswatini: set()
+Ethiopia: set()
+Fiji: set()
+Finland: {'white', 'blue'}
+France: {'white', 'red', 'blue'}
+Gabon: {'blue', 'green', 'orange'}
+The Gambia: {'white', 'red', 'green', 'blue'}
+Georgia (country): {'white', 'red'}
+Germany: {'black', 'red', 'orange'}
+Ghana: {'red', 'green', 'orange'}
+Greece: {'white', 'blue'}
+Grenada: set()
+Guatemala: set()
+Guinea: {'red', 'green', 'orange'}
+Guinea-Bissau: {'red', 'green', 'orange'}
+Guyana: set()
+Haiti: set()
+Honduras: set()
+Hungary: {'white', 'red', 'green'}
+Iceland: {'red', 'pink', 'blue'}
+India: set()
+Indonesia: {'white', 'red'}
+Iran: set()
+Iraq: {'white', 'red', 'black'}
+Republic of Ireland: {'white', 'green', 'orange'}
+Israel: {'white', 'pink', 'blue'}
+Italy: {'white', 'red', 'green'}
+Jamaica: {'black', 'green', 'orange'}
+Japan: {'white', 'red'}
+Jordan: {'white', 'red', 'black', 'green'}
+Kazakhstan: set()
+Kenya: set()
+Kiribati: set()
+Kuwait: {'white', 'red', 'black', 'green'}
+Kyrgyzstan: {'yellow', 'red'}
+Laos: {'white', 'red', 'blue'}
+Latvia: {'white', 'red'}
+Lebanon: set()
+Lesotho: set()
+Liberia: {'white', 'red', 'blue'}
+Libya: {'black', 'red', 'green'}
+Liechtenstein: set()
+Lithuania: {'red', 'green', 'orange'}
+Luxembourg: {'white', 'red', 'blue'}
+Madagascar: {'white', 'green', 'orange'}
+Malawi: {'black', 'red', 'green'}
+Malaysia: set()
+Maldives: {'red', 'green'}
+Mali: {'red', 'green', 'orange'}
+Malta: set()
+Marshall Islands: set()
+Mauritania: set()
+Mauritius: {'yellow', 'red', 'green', 'blue'}
+Mexico: set()
+Federated States of Micronesia: {'white'}
+Monaco: {'white', 'red', 'pink'}
+Mongolia: {'yellow', 'red', 'blue'}
+Montenegro: set()
+Morocco: {'red'}
+Mozambique: set()
+Myanmar: set()
+Namibia: set()
+Nauru: {'orange', 'blue'}
+Nepal: {'white', 'red', 'black', 'blue'}
+Kingdom of the Netherlands: {'white', 'red', 'blue'}
+New Zealand: set()
+Nicaragua: set()
+Niger: {'white', 'red', 'green'}
+Nigeria: {'white', 'green'}
+North Macedonia: {'yellow', 'red'}
+Norway: {'red', 'pink', 'blue'}
+Oman: set()
+Pakistan: set()
+Palau: {'yellow', 'blue'}
+Panama: set()
+Papua New Guinea: {'black', 'red'}
+Paraguay: set()
+Peru: {'white', 'red'}
+Philippines: set()
+Poland: {'white', 'red'}
+Portugal: set()
+Qatar: {'white', 'red'}
+South Korea: set()
+Moldova: set()
+Romania: {'blue', 'red', 'orange'}
+Russia: {'white', 'red', 'blue'}
+Rwanda: set()
+Saint Kitts and Nevis: set()
+Saint Lucia: set()
+Saint Vincent and the Grenadines: {'blue', 'green', 'orange'}
+Samoa: {'red', 'blue'}
+San Marino: {'white'}
+São Tomé and Príncipe: {'red', 'green', 'orange'}
+Saudi Arabia: {'white', 'green'}
+Senegal: set()
+Serbia: set()
+Seychelles: {'blue', 'yellow', 'white', 'red', 'green'}
+Sierra Leone: {'white', 'green', 'blue'}
+Singapore: {'white', 'red'}
+Slovakia: set()
+Slovenia: set()
+Solomon Islands: set()
+Somalia: {'white', 'blue'}
+South Africa: {'orange', 'blue', 'black', 'white', 'red', 'green'}
+South Sudan: set()
+Spain: set()
+Sri Lanka: set()
+Sudan: {'white', 'red', 'black', 'green'}
+Suriname: {'white', 'red', 'green'}
+Sweden: {'blue', 'orange'}
+Switzerland: {'white', 'red', 'pink'}
+Syria: set()
+Tajikistan: set()
+Thailand: {'white', 'red', 'black'}
+East Timor: {'black', 'red', 'orange'}
+Togo: set()
+Tonga: {'white', 'red'}
+Trinidad and Tobago: set()
+Tunisia: {'white', 'red'}
+Turkey: set()
+Turkmenistan: set()
+Tuvalu: set()
+Uganda: set()
+Ukraine: {'yellow', 'blue'}
+United Arab Emirates: {'white', 'red', 'black', 'green'}
+United Kingdom: {'white', 'red', 'blue'}
+Tanzania: set()
+United States: set()
+Uruguay: set()
+Uzbekistan: set()
+Vanuatu: set()
+Venezuela: set()
+Vietnam: {'yellow', 'red'}
+Yemen: {'white', 'red', 'black'}
+Zambia: set()
+Zimbabwe: set()
