@@ -30,6 +30,7 @@ class Flags:
         self.wiki_flags = WikiFlagScraper()
         if not test:
             self.wiki_flags.get_pages()
+            # print(*self.wiki_flags.url_dict.keys(), sep='\n')
 
     def get_colours(self, country, high_res=True, url=None) -> Set[str]:
         if url:
@@ -42,7 +43,11 @@ class Flags:
         # we set the colour profile to RGBA because PIL moans about transparency with RGB
         image = image.convert("RGBA")
         num_pixels = reduce(mul, image.size)
-        freq_colours = [FreqColour(f, Colour(c[:3])) for f, c in image.getcolors()]
+        print(num_pixels)
+        img_colours = image.getcolors()
+        if not img_colours:
+            raise ValueError(f"Could not get image colours for {country}")
+        freq_colours = [FreqColour(f, Colour(c[:3])) for f, c in img_colours]
         colours = self._reduce_colours(freq_colours, num_pixels)
         return colours
 
@@ -84,4 +89,4 @@ if __name__ == "__main__":
     test_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1024px-Flag_of_Canada_%28Pantone%29.svg.png"
 
     flags = Flags(test=False)
-    print(flags.get_colours("Ireland"))
+    print(flags.get_colours("The Comoros"))
