@@ -27,6 +27,7 @@ class FlagManager:
     def __make_image_dict(self) -> dict:
         if self.__force_update:
             # scrape-y scrape
+            print("Downloading files from Wikipedia...")
             self.__url_dict = self.__make_url_dict()
             return {
                 country: self.get_image(country)
@@ -34,11 +35,12 @@ class FlagManager:
             }
         else:
             # read-y read
+            print("Reading files from local cache...")
             dir_path = os.path.dirname(os.path.realpath(__file__))
             path = f'{dir_path}/flag_cache/{self.__res_str}/'
-            files = list(os.walk(path))[0][2]
+            files = sorted(list(os.walk(path))[0][2])
             return {
-                file_name[:-4]: Image.open(file_name)
+                file_name[:-4]: Image.open(f"{path}{file_name}")
                 for file_name in files
             }
 

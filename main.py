@@ -114,7 +114,7 @@ if __name__ == "__main__":
         print(flags.get_colours_from_image(img, "UK"))
 
     def test_all():
-        hi_res = False
+        hi_res = True
         thresh = 3
         results_fname = f"results_{'high' if hi_res else 'low'}_res_t={thresh}.txt"
         with open(results_fname, 'w+') as res_file:
