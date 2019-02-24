@@ -1,5 +1,5 @@
 from typing import NamedTuple, NewType, Tuple, Set, List, Iterator
-from scrape_flags import FlagManager
+from flag_manager import FlagManager
 from operator import mul
 from functools import reduce
 
@@ -19,6 +19,8 @@ class Flags:
 
     COLOURS = {
         # TODO the only problem with this now is these values
+        # Could make a 3d visualisation of the colours we're using
+        # This should define a range, not just a spot
         # Probably best not to pick "true" red, as dark red will be reported as black
         "red": Colour((200, 0, 0)),
         "green": Colour((0, 200, 0)),
