@@ -1,64 +1,87 @@
 from lxml.etree import HTML
 from PIL import Image
 import requests
+import os
 
 # for typing only
 from PIL.PngImagePlugin import PngImageFile
 
 
-def cached_to_file(f):
-    """
-    Write the flags to disk so we don't have to download every time
-    This is overfitted for purpose, could be made more general
-    """
-    def wrapper(cls, url):
-        filepath = f"flag_cache/{url.split('/')[-1]}"
-        try:
-            return Image.open(filepath)
-        except IOError:
-            image = f(cls, url)
-            # save image to disk for later
-            image.save(filepath)
-            return image
-    return wrapper
+class FlagManager:
 
+    def __init__(self, high_res=False, force_update=False):
+        """
+        Note: force_update still uses the local flag_cache,
+        it just goes via Wikipedia in case there's a new country :D
+        """
+        self.__high_res = high_res
+        self.__res_str = 'hi' if self.__high_res else 'lo'
+        self.__force_update = force_update
+        self.__url_dict = None
+        self.image_dict = self.__make_image_dict()
 
-class WikiFlagScraper:
+        if not self.image_dict:
+            print("No cached items found, forcing update")
+            self.__init__(high_res=high_res, force_update=True)
 
-    def __init__(self):
-        self.doc = None
-        self.img_urls = None
-        self.url_dict = None
+    def __make_image_dict(self) -> dict:
+        if self.__force_update:
+            # scrape-y scrape
+            self.__url_dict = self.__make_url_dict()
+            return {
+                country: self.get_image(country)
+                for country in self.__url_dict
+            }
+        else:
+            # read-y read
+            dir_path = os.path.dirname(os.path.realpath(__file__))
+            path = f'{dir_path}/flag_cache/{self.__res_str}/'
+            files = list(os.walk(path))[0][2]
+            return {
+                file_name[:-4]: Image.open(file_name)
+                for file_name in files
+            }
 
-    def get_pages(self):
+    @staticmethod
+    def __make_url_dict() -> dict:
         page_url = "https://en.wikipedia.org/wiki/Member_states_of_the_United_Nations"
         page = requests.get(page_url)
-        self.doc = HTML(page.content)
-        self.url_dict = self.make_mapping()
-
-    def make_mapping(self) -> dict:
+        doc = HTML(page.content)
         return {
             x.attrib['alt']: f"https:{x.attrib['src']}"
-            for x in self.doc.xpath('.//span[@class="flagicon"]/a/img')
+            for x in doc.xpath('.//span[@class="flagicon"]/a/img')
         }
 
-    def get_image(self, country: str, high_res=False) -> PngImageFile:
+    def get_image(self, country: str) -> PngImageFile:
         """
         Fetch the flag of a country
         """
-        # TODO On KeyError, try and fetch from wiki
-        url = self.url_dict[country]
-        if high_res:
-            url = self.get_high_res_url(country)
+        url = self.__url_dict[country]
+        if self.__high_res:
+            url = self.__get_high_res_url(country)
 
-        print(f"> Getting Flag of {country}: {url}")
-        return self.get_image_from_url(url)
+        file_path = f"flag_cache/{self.__res_str}/{country}.png"
+        try:
+            return Image.open(file_path)
+        except IOError:
+            print(f"> Getting Flag of {country}: {url}")
+            return self.get_image_from_url(url, file_path)
 
-    def get_high_res_url(self, country) -> str:
+    @staticmethod
+    def get_image_from_url(url, file_path=None):
+        response = requests.get(url, stream=True)
+        response.raw.decode_content = True
+        image = Image.open(response.raw)
+        if file_path:
+            image.save(file_path)
+        return image
+
+    @staticmethod
+    def __get_high_res_url(country) -> str:
         """
         Fetch the larger version of the thumbnail
         Unfortunately, we can't just go straight to "/File:Flag_of_{country}"
-        because (e.g.) Ireland doesn't follow the pattern. So we go via the
+        because (e.g.) R.O.Ireland doesn't follow the pattern. So we go via the
         actual wiki pages and trust the wiki redirect system
         """
         wiki_stem = "https://en.wikipedia.org"
@@ -71,14 +94,3 @@ class WikiFlagScraper:
         doc = HTML(flag_page.content)
         [flag_url_elem] = doc.xpath('.//div[@id="file"]/a/img')
         return f"https:{flag_url_elem.attrib['src']}"
-
-    @classmethod
-    @cached_to_file
-    def get_image_from_url(cls, url) -> PngImageFile:
-        """
-        Actually get the image
-        Separated for testing purposes
-        """
-        response = requests.get(url, stream=True)
-        response.raw.decode_content = True
-        return Image.open(response.raw)

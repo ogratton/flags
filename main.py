@@ -1,13 +1,10 @@
 from typing import NamedTuple, NewType, Tuple, Set, List, Iterator
-from scrape_flags import WikiFlagScraper
+from scrape_flags import FlagManager
 from operator import mul
 from functools import reduce
-import os
 
 # for typing only
 from PIL.PngImagePlugin import PngImageFile
-
-TEST = os.environ.get("TEST")
 
 
 Colour = NewType('Colour', Tuple[int, int, int])
@@ -32,26 +29,17 @@ class Flags:
         "orange": Colour((255, 165, 0)),
     }
 
-    def __init__(self, high_res=False, threshold=5):
-        self.wiki_flags = WikiFlagScraper()
-        if not TEST:
-            self.wiki_flags.get_pages()
-            # print(*self.wiki_flags.url_dict.keys(), sep='\n')
-        self.high_res = high_res
+    def __init__(self, high_res=False, threshold=5, force_update=False):
+        self.flag_manager = FlagManager(high_res=high_res, force_update=force_update)
         self.threshold = threshold
         self.country_colours = dict()
 
     def get_all(self):
-        for country in self.wiki_flags.url_dict:
-            self.country_colours[country] = self.get_colours(country)
+        for country, image in self.flag_manager.image_dict.items():
+            self.country_colours[country] = self.get_colours_from_image(image, country)
 
-    def get_colours(self, country, test_url=None) -> Set[str]:
-        if TEST and test_url:
-            image = WikiFlagScraper.get_image_from_url(test_url)
-        else:
-            # we get the high-res images to minimise artefacts that mess with colours
-            image = self.wiki_flags.get_image(country, high_res=self.high_res)
-        return self.get_colours_from_image(image, country)
+    def get_one(self, country):
+        return self.get_colours_from_image(self.flag_manager.image_dict[country], country)
 
     def get_colours_from_image(self, image: PngImageFile, country: str) -> Set[str]:
         # we set the colour profile to RGBA because PIL moans about transparency with RGB
@@ -115,11 +103,9 @@ class Flags:
 
 if __name__ == "__main__":
 
-    canada_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1024px-Flag_of_Canada_%28Pantone%29.svg.png"
-
     def test_one():
         flags = Flags(high_res=False, threshold=3)
-        print(flags.get_colours("Somalia"))
+        print(flags.get_one("Somalia"))
 
     def test_from_file():
         flags = Flags(high_res=False, threshold=3)
@@ -128,7 +114,7 @@ if __name__ == "__main__":
         print(flags.get_colours_from_image(img, "UK"))
 
     def test_all():
-        hi_res = True
+        hi_res = False
         thresh = 3
         results_fname = f"results_{'high' if hi_res else 'low'}_res_t={thresh}.txt"
         with open(results_fname, 'w+') as res_file:
@@ -139,3 +125,5 @@ if __name__ == "__main__":
     test_all()
 
     # TODO can't read colours of high res files for some reason
+    # TODO need to reorder so it doesn't scrape wiki every time
+    # should make country:image dict instead of country:url
