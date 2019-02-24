@@ -15,24 +15,28 @@ class FreqColour(NamedTuple):
     colour: Colour
 
 
-class Flags:
-
-    COLOURS = {
-        # TODO the only problem with this now is these values
-        # Could make a 3d visualisation of the colours we're using
-        # This should define a range, not just a spot
-        # Probably best not to pick "true" red, as dark red will be reported as black
-        "red": Colour((200, 0, 0)),
-        "green": Colour((0, 200, 0)),
-        "blue": Colour((0, 0, 200)),
-        "black": Colour((0, 0, 0)),
-        "white": Colour((255, 255, 255)),
-        "yellow": Colour((255, 255, 0)),
-        "pink": Colour((255, 105, 180)),
-        "orange": Colour((255, 165, 0)),
+COLOURS = {
+    # These colour definitions are critical to the success of the program
+    # These are tweaked so that the code agrees (mostly) with my assessments
+    # They're still not perfect
+    # The threshold is also important. Using vector images would also solve
+    # the problem of image artefacts
+    "red": Colour((200, 40, 40)),
+    "orange": Colour((200, 120, 20)),
+    "yellow": Colour((200, 200, 40)),
+    "green": Colour((40, 120, 40)),
+    "cyan": Colour((40, 200, 200)),
+    "blue": Colour((40, 40, 120)),
+    "pink": Colour((200, 40, 200)),
+    # "purple": Colour((100, 40, 100)),
+    "black": Colour((0, 0, 0)),
+    "white": Colour((255, 255, 255)),
     }
 
-    def __init__(self, high_res=False, threshold=5, force_update=False):
+
+class Flags:
+
+    def __init__(self, high_res=False, threshold=1.0, force_update=False):
         self.flag_manager = FlagManager(high_res=high_res, force_update=force_update)
         self.threshold = threshold
         self.country_colours = dict()
@@ -73,13 +77,13 @@ class Flags:
         return min(
             (
                 ((self._distance(freq_colour.colour, col_val)), col_name)
-                for col_name, col_val in self.COLOURS.items()
+                for col_name, col_val in COLOURS.items()
             ),
             key=lambda x: x[0]
         )[1]
         # More traditional way of doing this:
         # min_dist = (1e10, None)
-        # for colour_name, colour_value in self.COLOURS.items():
+        # for colour_name, colour_value in COLOURS.items():
         #     distance = self._sq_distance(colour_value, freq_colour.colour)
         #     if distance < min_dist[0]:
         #         min_dist = (distance, colour_name)
@@ -118,11 +122,11 @@ if __name__ == "__main__":
 
     def test_all():
         hi_res = True
-        thresh = 3
+        thresh = 0.5
         results_fname = f"results_{'high' if hi_res else 'low'}_res_t={thresh}.txt"
         with open(results_fname, 'w+') as res_file:
             flags = Flags(high_res=hi_res, threshold=thresh)
             flags.get_all()
-            print(*[f"{k}: {v}" for k, v in flags.country_colours.items()], sep='\n', file=res_file)
+            print(*[f"{k}: {sorted(list(v))}" for k, v in flags.country_colours.items()], sep='\n', file=res_file)
 
     test_all()

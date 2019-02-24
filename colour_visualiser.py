@@ -10,29 +10,35 @@ Adapted from:
 http://www.poketcode.com/pyglet_demos.html
 https://github.com/jjstrydom/pyglet_examples
 """
-from colour_extractor import Colour
+from colour_extractor import Colour, COLOURS
 from typing import NewType, Tuple
+from random import randint
 from copy import deepcopy
 from pyglet.gl import gl
 from pyglet.gl import glu
 import pyglet
-import random
 import os
+
+
+# TODO this can be tidied up endlessly
+
 
 # Pyglet uses RGBA colour from 0-1, so the last value is opacity
 RGBAColour = NewType('Colour', Tuple[float, float, float, float])
 
 DIST_BACK = 300
 BLACK = RGBAColour((0.0, 0.0, 0.0, 1))
+GREY = RGBAColour((0.5, 0.5, 0.5, 1))
 WHITE = RGBAColour((1.0, 1.0, 1.0, 1))
 
 # models
 BOX = 0
 SPHERE = 1
+PYRAMID = 2
 
 
 def rand_colour():
-    return RGBAColour((random.random(), random.random(), random.random(), 1))
+    return Colour((randint(0, 255), randint(0, 255), randint(0, 255)))
 
 
 def new_rgba(rgb: Colour) -> RGBAColour:
@@ -44,7 +50,7 @@ class World:
     Collection of OBJ models within the larger simulation.
     """
 
-    def __init__(self, coords, models, background_color=BLACK):
+    def __init__(self, coords, models, background_color=GREY):
 
         # original copies of each type of model
         self.models = models
@@ -58,24 +64,29 @@ class World:
         box_model.scale = self.cube.edge_length/2
         self.box_model = box_model
 
-        self.colours = {
-            Colour((255, 0, 0)),
-            Colour((255, 255, 0)),
-            Colour((255, 255, 255)),
-            Colour((0, 255, 255)),
-            Colour((0, 0, 255)),
-            Colour((0, 0, 0)),
-            Colour((0, 255, 0)),
-            Colour((255, 0, 255)),
-        }
-
         self.colour_models = []
-        for colour in self.colours:
+        for colour in COLOURS.values():
             colour_model = deepcopy(self.models[SPHERE])
-            colour_model.x, colour_model.y, colour_model.z = colour[:3]
+            colour_model.x, colour_model.y, colour_model.z = colour
             colour_model.color = new_rgba(colour)
             colour_model.scale = 5
             self.colour_models.append(colour_model)
+
+        random_colours = [
+            # rand_colour(),
+            # rand_colour(),
+            # rand_colour()
+        ]
+
+        print(*random_colours, sep='\n')
+
+        self.rand_col_models = []
+        for rc in random_colours:
+            rc_model = deepcopy(self.models[PYRAMID])
+            rc_model.x, rc_model.y, rc_model.z = rc
+            rc_model.color = new_rgba(rc)
+            rc_model.scale = 5
+            self.rand_col_models.append(rc_model)
 
         # sets the background color
         gl.glClearColor(*background_color)
@@ -105,6 +116,9 @@ class World:
 
         for colour_model in self.colour_models:
             self.render_model(colour_model, frame=False)
+
+        for rc_model in self.rand_col_models:
+            self.render_model(rc_model, frame=False)
 
     def render_model(self, model, fill=True, frame=True):
 
@@ -255,7 +269,7 @@ class Window(pyglet.window.Window):
 
         # Load models from files
         self.models = []
-        self.model_names = ['box.obj', 'uv_sphere.obj']
+        self.model_names = ['box.obj', 'uv_sphere.obj', 'pyramid.obj']
         for name in self.model_names:
             self.models.append(OBJModel((0, 0, 0), path=os.path.join('obj', name)))
 
