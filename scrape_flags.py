@@ -39,6 +39,8 @@ class WikiFlagScraper:
             name = string.capwords(name.replace('_', ' '))
             if name[-1] == ')':
                 name = ' '.join(name.split()[:-1])
+            if name.startswith("The "):
+                name = name[4:]
 
             url_dict[name] = url
         return url_dict
@@ -47,6 +49,7 @@ class WikiFlagScraper:
         """
         Fetch the flag of a country
         """
+        # TODO On KeyError, try and fetch from wiki
         url = self.url_dict[country]
         if high_res:
             url = url.replace('23px', '1024px')
