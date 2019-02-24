@@ -1,9 +1,6 @@
-from urllib.parse import unquote
 from lxml.etree import HTML
 from PIL import Image
 import requests
-import string
-import re
 
 # types
 from PIL.PngImagePlugin import PngImageFile
@@ -18,32 +15,19 @@ class WikiFlagScraper:
         self.url_dict = None
 
     def get_pages(self):
-        page_url = "https://en.wikipedia.org/wiki/List_of_sovereign_states"
+        page_url = "https://en.wikipedia.org/wiki/Member_states_of_the_United_Nations"
         page = requests.get(page_url)
         self.doc = HTML(page.content)
-        self.img_urls = self.get_img_urls()
         self.url_dict = self.make_mapping()
 
-    def get_img_urls(self) -> Iterator[str]:
-        return map(lambda x: f"https:{x.attrib['src']}", self.doc.xpath('.//span[@class="flagicon"]/img'))
-
-    def make_mapping(self) -> dict:
-        """
-        Make dict of country name -> image url
-        """
-        url_dict = dict()
-        for url in self.img_urls:
-            url_str = unquote(url)
-            name = re.search(r'Flag_of_(.*?)\.svg', url_str).group(1)
-            # a few hacky things to clean up
-            name = string.capwords(name.replace('_', ' '))
-            if name[-1] == ')':
-                name = ' '.join(name.split()[:-1])
-            if name.startswith("The "):
-                name = name[4:]
-
-            url_dict[name] = url
-        return url_dict
+    def make_mapping(self) -> Iterator[dict]:
+        return dict(map(
+            lambda x: (
+                x.attrib['alt'],
+                f"https:{x.attrib['src']}"
+            ),
+            self.doc.xpath('.//span[@class="flagicon"]/a/img')
+        ))
 
     def get_image(self, country: str, high_res=False) -> PngImageFile:
         """
