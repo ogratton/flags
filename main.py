@@ -18,6 +18,7 @@ class FreqColour(NamedTuple):
 class Flags:
 
     COLOURS = {
+        # TODO the only problem with this now is these values
         # Probably best not to pick "true" red, as dark red will be reported as black
         "red": Colour((200, 0, 0)),
         "green": Colour((0, 200, 0)),
@@ -123,7 +124,3 @@ if __name__ == "__main__":
             print(*[f"{k}: {v}" for k, v in flags.country_colours.items()], sep='\n', file=res_file)
 
     test_all()
-
-    # TODO can't read colours of high res files for some reason
-    # TODO need to reorder so it doesn't scrape wiki every time
-    # should make country:image dict instead of country:url
